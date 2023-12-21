@@ -1,0 +1,20 @@
+# Sử dụng output là Blob Storage
+SELECT System.Timestamp AS WindowEnd, COUNT(*) AS FraudulentCalls
+    INTO "MyOutput"
+    FROM "CallStream" CS1 TIMESTAMP BY CallRecTime
+    JOIN "CallStream" CS2 TIMESTAMP BY CallRecTime
+    ON CS1.CallingIMSI = CS2.CallingIMSI
+    AND DATEDIFF(ss, CS1, CS2) BETWEEN 1 AND 5
+    WHERE CS1.SwitchNum != CS2.SwitchNum
+    GROUP BY TumblingWindow(Duration(second, 1))
+
+
+# Sử dụng output là Power BI Service
+SELECT System.Timestamp AS WindowEnd, COUNT(*) AS FraudulentCalls
+    INTO "MyPBIoutput"
+    FROM "CallStream" CS1 TIMESTAMP BY CallRecTime
+    JOIN "CallStream" CS2 TIMESTAMP BY CallRecTime
+    ON CS1.CallingIMSI = CS2.CallingIMSI
+    AND DATEDIFF(ss, CS1, CS2) BETWEEN 1 AND 5
+    WHERE CS1.SwitchNum != CS2.SwitchNum
+    GROUP BY TumblingWindow(Duration(second, 1))
