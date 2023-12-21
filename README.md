@@ -16,7 +16,7 @@ This is a simple fraudulent call detective project using Azure Stream Analytics.
 <img width="358" alt="PowerBIService" src="https://github.com/thanhphatuit/jobsearchapplication/assets/84914537/5e49b437-1e0f-433f-9ee2-9e2682465931">
 
 ## Video demo
-- Power BI Dekstop: .
-- Power BI service: .
+- Power BI Dekstop: https://youtu.be/ui4rT0rxVuE.
+- Power BI service: https://youtu.be/HXN1jn7gpeA.
 
 Feel free to explore and enhance the project as needed!
