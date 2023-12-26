@@ -1,9 +1,5 @@
 # FraudulentCall_AzureStreamAnalytics
 
-## Description
-
-This is a simple fraudulent call detective project using Azure Stream Analytics.
-
 
 ## Architecture 
 
